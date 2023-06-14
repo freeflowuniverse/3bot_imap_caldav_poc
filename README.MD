@@ -1,0 +1,1 @@
+Example IMAP backend for 3Bot
