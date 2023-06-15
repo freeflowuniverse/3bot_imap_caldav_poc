@@ -18,6 +18,9 @@ func main() {
 	// authentication over unencrypted connections
 	s.AllowInsecureAuth = true
 
+	// user := NewUser("username", "password")
+	// s.AddUser(user)
+
 	log.Println("Starting IMAP server at localhost:1143")
 	if err := s.ListenAndServe(); err != nil {
 		log.Fatal(err)
