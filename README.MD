@@ -7,7 +7,7 @@ To start IMAP server in port 1143, run `go run main.go` from the root of this di
 This can be done by running the server in poc0.go
 `go run poc0.go`
 
-# POC1: Connecting to Mail Client
+# POC1: Connecting to IMAP Server via Mail Client
 
 This can be done by running the server in poc1.go
 `go run poc1.go -listen localhost:1143 -username <USERNAME> -password <PASSWORD> -insecure-auth true`
@@ -41,3 +41,15 @@ At first, Apple Mail fails to connect. As such after adding the mail account des
 12. Change server port from `143` to the port exposed by ngrok.
 
 For this example TLS isn't necessary. After saving the changes Apple Mail should be able to verify and successfully add the IMAP Server mail account.
+
+# POC2: Connect to WebDAV Server (MacOS)
+
+1. Run server: `go run poc2.go`
+2. Go to finder -> go
+3. `Connect to server`
+4. For server address, type: http://localhost:8080
+5. Select login as guest
+6. You should see localhost added to locations and this directory shared over the server.
+
+
+# POC3: Connect to CalDav Server
