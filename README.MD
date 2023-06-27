@@ -1,55 +1,28 @@
-Example IMAP backend for 3Bot
+# 3Bot IMAP, WebDAV and CalDAV backend POCs
 
-# Running
-To start IMAP server in port 1143, run `go run main.go` from the root of this directory.
+Exploring:
+- POC0: Serving IMAP, WebDAV and CalDAV backends for 3Bot
+- POC1: Accessing servers and modifying data with IMAP, WebDAV and CalDAV clients
+- POC2: Accessing servers and modifying data from native calender, mail and filesystem clients
+- POC3: Programming 3Bot to use IMAP, WebDAV and CalDAV clients to access and modify inboxes, calendars, and folders over V.
 
-# POC0: Running IMAP Server
-This can be done by running the server in poc0.go
-`go run poc0.go`
+**The aim is to **
 
-# POC1: Connecting to IMAP Server via Mail Client
+## Installation
 
-This can be done by running the server in poc1.go
-`go run poc1.go -listen localhost:1143 -username <USERNAME> -password <PASSWORD> -insecure-auth true`
+- Requires v and go.
 
-For me, using the local address of the IMAP server didn't work, so i used ngrok to expose the IMAP server running on port 1143
-`ngrok tcp 1143`
+## Running
 
-Following that, simply use the following configuration to connect to the IMAP server:
-```
-Incoming mail server host name: <ngrok_domain>
-Username: <username> (defined when running example)
-Password: <password> (defined when running example)
-```
+To run all the POCs in this repository, run `sh run.sh`
+This will run all the POC's in order. 
 
-## Apple Mail (iOS 16.5)
-
-1. Settings -> Mail -> Accounts
-2. Add account (other)
-3. Add Mail Account
-4. Name: Test
-5. Email: test@<ngrok_domain>.com
-6. Password: test (same as defined in main.go)
-7. Host Name: <ngrok_domain> (**write the domain without the tcp schema: i.e 4.tcp.ngrok.io:10107**)
-8. Username: <username> (defined when running example)
-9. Password: <username> (defined when running example)
-10. Outgoing mail server: anything, out of scope of this POC
-
-At first, Apple Mail fails to connect. As such after adding the mail account despite the alert that it might not be able to receive emails as connection wasn't achieved, you can properly configure by clicking advanced options on the newly added mail account.
-
-11. Change IMAP Path Prefix from `/`to `INBOX`
-12. Change server port from `143` to the port exposed by ngrok.
-
-For this example TLS isn't necessary. After saving the changes Apple Mail should be able to verify and successfully add the IMAP Server mail account.
-
-# POC2: Connect to WebDAV Server (MacOS)
-
-1. Run server: `go run poc2.go`
-2. Go to finder -> go
-3. `Connect to server`
-4. For server address, type: http://localhost:8080
-5. Select login as guest
-6. You should see localhost added to locations and this directory shared over the server.
+**Note that when running POC2, you will be prompted to connect to the servers with your OS's native mail, calendar and filesystem clients**
 
 
-# POC3: Connect to CalDav Server
+
+
+
+
+
+
