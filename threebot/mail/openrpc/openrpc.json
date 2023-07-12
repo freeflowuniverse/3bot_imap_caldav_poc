@@ -1,0 +1,575 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "mail",
+    "version": "1.0.0"
+  },
+  "methods": [
+    {
+      "name": "mail.Close",
+      "params": [
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Login",
+      "params": [
+        {
+          "name": "params",
+          "schema": {
+            "$ref": "#\/components\/schemas\/LoginParams"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Select",
+      "params": [
+        {
+          "name": "params",
+          "schema": {
+            "$ref": "#\/components\/schemas\/SelectParams"
+          }
+        }
+      ],
+      "result": {
+        "name": "SelectData",
+        "schema": {
+          "$ref": "#\/components\/schemas\/SelectData"
+        }
+      }
+    },
+    {
+      "name": "mail.Create",
+      "params": [
+        {
+          "name": "options",
+          "schema": {
+            "$ref": "#\/components\/schemas\/CreateOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Delete",
+      "params": [
+        {
+          "name": "mailbox",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Rename",
+      "params": [
+        {
+          "name": "params",
+          "schema": {
+            "$ref": "#\/components\/schemas\/RenameParams"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Subscribe",
+      "params": [
+        {
+          "name": "mailbox",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Unsubscribe",
+      "params": [
+        {
+          "name": "mailbox",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.List",
+      "params": [
+        {
+          "name": "options",
+          "schema": {
+            "$ref": "#\/components\/schemas\/ListOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Status",
+      "params": [
+        {
+          "name": "options",
+          "schema": {
+            "$ref": "#\/components\/schemas\/StatusOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "StatusData",
+        "schema": {
+          "$ref": "#\/components\/schemas\/StatusData"
+        }
+      }
+    },
+    {
+      "name": "mail.Append",
+      "params": [
+        {
+          "name": "options",
+          "schema": {
+            "$ref": "#\/components\/schemas\/AppendOptions"
+          }
+        }
+      ],
+      "result": {
+        "name": "AppendData",
+        "schema": {
+          "$ref": "#\/components\/schemas\/AppendData"
+        }
+      }
+    },
+    {
+      "name": "mail.Poll",
+      "params": [
+        {
+          "name": "allow_expunge",
+          "schema": {
+            "type": "boolean"
+          }
+        }
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "mail.Idle",
+      "params": [
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    },
+    {
+      "name": "main.CloseHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.LoginHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.SelectHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.CreateHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.DeleteHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.RenameHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.SubscribeHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.UnsubscribeHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.ListHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.StatusHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.AppendHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.PollHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.IdleHandle",
+      "params": [
+        {
+          "name": "data",
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "result": {
+        "name": "!string",
+        "schema": {
+          "type": "string"
+        }
+      }
+    },
+    {
+      "name": "main.RunServer",
+      "description": "creates and runs a jsonrpc ws server handles rpc requests to reverse_echo function",
+      "params": [
+      ],
+      "result": {
+        "name": "!",
+        "schema": {
+          "type": "null"
+        }
+      }
+    }
+  ],
+  "components": {
+    "schemas": {
+      "LoginParams": {
+        "title": "LoginParams",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "SelectParams": {
+        "title": "SelectParams",
+        "properties": {
+          "mailbox": {
+            "description": "options",
+            "type": "string"
+          }
+        }
+      },
+      "SelectData": {
+        "title": "SelectData"
+      },
+      "CreateOptions": {
+        "title": "CreateOptions",
+        "properties": {
+          "mailbox": {
+            "type": "string"
+          }
+        }
+      },
+      "RenameParams": {
+        "title": "RenameParams",
+        "properties": {
+          "mailbox": {
+            "type": "string"
+          },
+          "new_name": {
+            "type": "string"
+          }
+        }
+      },
+      "ListOptions": {
+        "title": "ListOptions",
+        "properties": {
+          "patterns": {
+            "type": "array"
+          }
+        }
+      },
+      "StatusOptions": {
+        "title": "StatusOptions",
+        "properties": {
+          "mailbox": {
+            "type": "string"
+          }
+        }
+      },
+      "StatusData": {
+        "title": "StatusData"
+      },
+      "AppendOptions": {
+        "title": "AppendOptions",
+        "properties": {
+          "mailbox": {
+            "type": "string"
+          }
+        }
+      },
+      "AppendData": {
+        "title": "AppendData"
+      },
+      "Mail": {
+        "title": "Mail",
+        "properties": {
+          "mailboxes": {
+            "$ref": "#\/components\/schemas\/Mailbox"
+          }
+        }
+      },
+      "Mailbox": {
+        "title": "Mailbox",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "mails": {
+            "$ref": "#\/components\/schemas\/Email"
+          }
+        }
+      },
+      "Email": {
+        "title": "Email",
+        "properties": {
+          "time": {
+            "$ref": "#\/components\/schemas\/Time"
+          },
+          "subject": {
+            "type": "string"
+          },
+          "from": {
+            "$ref": "#\/components\/schemas\/EmailAddress"
+          },
+          "cc": {
+            "$ref": "#\/components\/schemas\/EmailAddress"
+          },
+          "bcc": {
+            "$ref": "#\/components\/schemas\/EmailAddress"
+          },
+          "body": {
+            "type": "string"
+          },
+          "flags": {
+            "$ref": "#\/components\/schemas\/Flag"
+          }
+        }
+      },
+      "CustomJsonRpcHandler": {
+        "title": "CustomJsonRpcHandler"
+      }
+    }
+  }
+}
